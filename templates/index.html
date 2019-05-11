@@ -5,8 +5,10 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>为你推荐</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <script>
     {% if not name %}
         alert("你还没有登录，请先登录....");
@@ -21,42 +23,40 @@
 
     <div class="recommend">
         <div class="choose center">
-            <a href="/index/index/{{ name }}" style="background-color: {{ color1 }}">为你推荐</a>
             <a href="/index/hot/{{ name }}" style="background-color: {{ color2 }}">热门电影</a>
         </div><!--选择功能部分-->
         <div class="list center">
-            <form action="" method="POST">
+            <form action="" method="POST" class="navbar-form navbar-left" role="search">
                 <h1>输入用户id</h1>
                 <div>
-                    <input type="text" placeholder="" required="" id="id" name="id" />
+                    <input type="text" placeholder="" required="" id="id" name="id" class="form-control" aria-describedby="sizing-addon3/>
                 </div>
                 <div style="margin-left: 110px">
-                    <input type="submit" value="确定" />
+                    <input type="submit" value="确定" class="btn btn-default" />
                 </div>
 		    </form>
-            <table class="list_table" border="1">
+            <table class="table table-hover" border="1">
                 <tr>
-                    <td align="center">电影名</td>
                     <td align="center">电影 ID</td>
-                    <td align="center">评论人数</td>
-                    <td align="center">综合评分</td>
+                    <td align="center">电影名</td>
+                    <td align="center">类型</td>
+                    <!--<td align="center">评论人数</td>-->
+                    <!--<td align="center">综合评分</td>-->
                 </tr>
                 {% if flag %}
-                    {% for bid,v in bookdic.iteritems %}
+                    {% for mid,v in movie_dic.iteritems %}
                         <tr>
-                            <td align="center"><a href="https://book.douban.com/subject/{{ bid }}" target="_blank">{{ v.bname }}</a></td>
                             <td align="center">{{ bid }}</td>
-                            <td align="center">{{ v.bdisnum }}</td>
-                            <td align="center">{{ v.bscore }}</td>
+                            <td align="center"><a href="https://book.douban.com/subject/{{ bid }}" target="_blank">{{ v.name }}</a></td>
+                            <td align="center">{{ v.genres }}</td>
                         </tr>
                     {% endfor %}
                 {% elif not flag%}
-                    {% for one in booklist %}
+                    {% for one in movie_list %}
                         <tr>
-                            <td align="center"><a href="https://book.douban.com/subject/{{ one.bid }}" target="_blank">{{ one.bname }}</a></td>
-                            <td align="center">{{ one.bid }}</td>
-                            <td align="center">{{ one.bdisnum }}</td>
-                            <td align="center">{{ one.bscore }}</td>
+                            <td align="center">{{ one.mid }}</td>
+                            <td align="center"><a href="https://book.douban.com/subject/{{ one.bid }}" target="_blank">{{ one.name }}</a></td>
+                            <td align="center">{{ one.genres }}</td>
                         </tr>
                     {% endfor %}
                 {% endif %}
@@ -68,5 +68,9 @@
     <div class="foot center">
         <span>made by bellick  |  @copyright2019/05/02</span>
     </div><!--底部显示-->
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

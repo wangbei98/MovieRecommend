@@ -141,20 +141,23 @@ def recommend(id):
     return moviei_d_list
 
 
+# from models import Movies
+import pandas as pd
+
 ##############################
-def getMovieOfId(id):
+def getMovieOfId(id): # from internet
     pass
 
 
 #############################
 def movieDataToDatabase():
-    pass
+    movies = pd.read_csv('../dataset/movies.csv')
+    return movies.iloc[:10,:]
 
 #############################
 def getMovieInfo(id):
     pass
 
 
-
 if __name__ =='__main__':
-    print(recommend(1))
+    print('jj')

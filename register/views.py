@@ -1,3 +1,4 @@
+#encoding:utf8
 from django.shortcuts import render,render_to_response,HttpResponseRedirect
 from django.http import HttpResponse
 # import mysql.connector

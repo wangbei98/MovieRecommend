@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="/static/css/login.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+{% if error %}
+<script>
+alert("{{ error }}");
+</script>
+{% endif %}
+<div class="container">
+	<section id="content">
+		<form action="" method="POST">
+			<h1>欢迎注册</h1>
+			<div>
+				<input type="text" class="form-control" placeholder="Username" required="" id="username" name="username" />
+			</div>
+			<div>
+				<input type="password" class="form-control" placeholder="Password16-24" required="" id="password" name = 'password'/>
+			</div>
+			<div style="margin-left: 110px">
+				<input type="submit" value="Sign up"  class="btn btn-default"/>
+			</div>
+		</form><!-- form -->
+
+	</section><!-- content -->
+</div><!-- container -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

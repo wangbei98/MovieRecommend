@@ -12,8 +12,8 @@ User-based collaborative filtering algorithm
 
 # Rendering：
 ### recommend page
-[recommend](https://ws2.sinaimg.cn/large/006tNc79ly1g2yen7kfd2j313x0jijuk.jpg)
+![recommend](https://ws2.sinaimg.cn/large/006tNc79ly1g2yen7kfd2j313x0jijuk.jpg)
 ### login page
-[login](https://ws1.sinaimg.cn/large/006tNc79ly1g2yep08eonj30x105kgly.jpg)
+![login](https://ws1.sinaimg.cn/large/006tNc79ly1g2yep08eonj30x105kgly.jpg)
 
 

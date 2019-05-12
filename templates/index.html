@@ -44,10 +44,10 @@
                     <!--<td align="center">综合评分</td>-->
                 </tr>
                 {% if flag %}
-                    {% for mid,v in movie_dic.iteritems %}
+                    {% for v in movie_dic.values %}
                         <tr>
-                            <td align="center">{{ bid }}</td>
-                            <td align="center"><a href="https://book.douban.com/subject/{{ bid }}" target="_blank">{{ v.name }}</a></td>
+                            <td align="center">{{ v.movie_id }}</td>
+                            <td align="center">{{ v.name }}</td>
                             <td align="center">{{ v.genres }}</td>
                         </tr>
                     {% endfor %}
@@ -55,7 +55,7 @@
                     {% for one in movie_list %}
                         <tr>
                             <td align="center">{{ one.mid }}</td>
-                            <td align="center"><a href="https://book.douban.com/subject/{{ one.bid }}" target="_blank">{{ one.name }}</a></td>
+                            <td align="center">{{ one.name }}</td>
                             <td align="center">{{ one.genres }}</td>
                         </tr>
                     {% endfor %}
